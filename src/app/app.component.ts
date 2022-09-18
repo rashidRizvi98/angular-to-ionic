@@ -38,6 +38,7 @@ export class AppComponent {
 
   // Test if it works, when coming back from this.keycloak.login();
   this.keycloak.onAuthSuccess = () => {
+    this.authSuccess = true;
       console.log('authenticated!');
   };
 
