@@ -19,7 +19,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/.well-known/assetlinks",
+              "src/.well-known/assetlinks.json",
               { "glob": "assetlinks", "input": "src/.well-known/", "output": "/" },
               "src/favicon.ico",
               "src/assets"
