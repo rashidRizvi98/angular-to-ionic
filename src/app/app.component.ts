@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { App,URLOpenListenerEvent } from '@capacitor/app';
 import { Capacitor } from '@capacitor/core';
 import * as Keycloak from 'keycloak-ionic';
-
+window['Capacitor']['Plugins'].App = App;
 
 @Component({
   selector: 'app-root',
