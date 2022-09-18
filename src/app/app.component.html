@@ -1,11 +1,11 @@
 <div>
-  <h2>Status: <span>{{authSuccess ? 'Authenticated' : 'Unauthenticated'}}</span></h2>
+<!--   <h2>Status: <span>{{authSuccess ? 'Authenticated' : 'Unauthenticated'}}</span></h2>
   <pre *ngIf="userProfile">{{userProfile | json}}</pre>
 
   <div *ngIf="authSuccess"></div>
   <button (click)="login()">Login</button>
   <button (click)="loadProfile()" [disabled]="!authSuccess">Load Profile</button>
-  <button (click)="logout()">Logout</button>
+  <button (click)="logout()">Logout</button> -->
   <p>Keycloak token is not persistent in this example.</p>
   <p>Auth response {{authResponse | json}}</p>
 </div>

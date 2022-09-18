@@ -1,10 +1,10 @@
 import { ChangeDetectorRef, Component, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { App,URLOpenListenerEvent } from '@capacitor/app';
-import { Capacitor } from '@capacitor/core';
-import * as Keycloak from 'keycloak-ionic';
 window['Capacitor']['Plugins'].App = App;
-
+import { Capacitor } from '@capacitor/core';
+//import * as Keycloak from 'keycloak-ionic';
+//let Keycloak = require('keycloak-ionic');
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,25 +12,26 @@ window['Capacitor']['Plugins'].App = App;
 })
 export class AppComponent {
   title = 'angular-to-ionic';
-  public keycloak: Keycloak.KeycloakInstance;
+ /*  public keycloak: Keycloak.KeycloakInstance;
   public authSuccess: boolean = false;
-  public userProfile: Keycloak.KeycloakProfile = {};
+  public userProfile: Keycloak.KeycloakProfile = {}; */
 authResponse: any;
 
   constructor(private changeRef: ChangeDetectorRef,private router: Router, private zone: NgZone){
+    window['Capacitor']['Plugins'].App = App;
     this.initializeApp();
   }
 
   ngOnInit(): void {
     let isNative = Capacitor.isNativePlatform();
 
-    this.keycloak = Keycloak({
+   /*  this.keycloak = Keycloak({
       clientId: 'angular-ionic',
       realm: 'angular-ionic',
       url: 'http://152.69.187.51:443/auth'
   });
   this.keycloak.init({
-      adapter: 'capacitor-native',
+      adapter: 'capacitor',
       responseMode: 'query',
       redirectUri: 'https://angular-to-ionic.vercel.app/'
   });
@@ -53,10 +54,10 @@ authResponse: any;
     this.authSuccess = false;
     this.userProfile = {};
     this.changeRef.detectChanges();
-  };
+  }; */
   }
 
-  login(): void {
+ /*  login(): void {
     this.keycloak.login();
   }
 
@@ -69,7 +70,7 @@ authResponse: any;
 
   logout() {
     this.keycloak.logout();
-  }
+  } */
 
   initializeApp() {
 		App.addListener('appUrlOpen', (event: URLOpenListenerEvent) => {
@@ -88,4 +89,5 @@ authResponse: any;
 		});
 	}
 
+  
 }
