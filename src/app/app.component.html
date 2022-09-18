@@ -7,6 +7,7 @@
   <button (click)="loadProfile()" [disabled]="!authSuccess">Load Profile</button>
   <button (click)="logout()">Logout</button>
   <p>Keycloak token is not persistent in this example.</p>
+  <p>Auth response {{authResponse | json}}</p>
 </div>
 <nav>
   <a [routerLink]="'/'">Home</a><br>

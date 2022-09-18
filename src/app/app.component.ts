@@ -15,7 +15,7 @@ export class AppComponent {
   public keycloak: Keycloak.KeycloakInstance;
   public authSuccess: boolean = false;
   public userProfile: Keycloak.KeycloakProfile = {};
-
+authResponse: any;
 
   constructor(private changeRef: ChangeDetectorRef,private router: Router, private zone: NgZone){
     this.initializeApp();
@@ -40,6 +40,11 @@ export class AppComponent {
   this.keycloak.onAuthSuccess = () => {
     this.authSuccess = true;
       console.log('authenticated!');
+      this.changeRef.detectChanges();
+  };
+
+  this.keycloak.onAuthError = (err) => {
+    this.authResponse = err
   };
 
   this.keycloak.onAuthLogout = () => {
