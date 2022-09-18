@@ -40,6 +40,7 @@ authResponse: any;
   this.keycloak.onAuthSuccess = () => {
     this.authSuccess = true;
       console.log('authenticated!');
+      this.authResponse = 'authenticated!'
       this.changeRef.detectChanges();
   };
 
