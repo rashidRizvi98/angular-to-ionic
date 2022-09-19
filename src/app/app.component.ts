@@ -31,7 +31,7 @@ authResponse: any;
       url: 'http://152.69.187.51:443/auth'
   });
   this.keycloak.init({
-      adapter: 'capacitor',
+      adapter: 'capacitor-native',
       responseMode: 'query',
       redirectUri: 'https://angular-to-ionic.vercel.app/'
   });
