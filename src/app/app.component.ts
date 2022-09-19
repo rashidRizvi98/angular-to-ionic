@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { App,URLOpenListenerEvent } from '@capacitor/app';
-window['Capacitor']['Plugins'].App = App;
+//window['Capacitor']['Plugins'].App = App;
 import { Capacitor } from '@capacitor/core';
 //import * as Keycloak from 'keycloak-ionic';
 //let Keycloak = require('keycloak-ionic');
@@ -18,7 +18,7 @@ export class AppComponent {
 authResponse: any;
 
   constructor(private changeRef: ChangeDetectorRef,private router: Router, private zone: NgZone){
-    window['Capacitor']['Plugins'].App = App;
+ //   window['Capacitor']['Plugins'].App = App;
     this.initializeApp();
   }
 
